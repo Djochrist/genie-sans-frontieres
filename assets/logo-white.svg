@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 290 66" fill="none" role="img" aria-label="Génie Sans Frontières Group">
+  <title>Génie Sans Frontières Group</title>
+
+  <!-- ── G LETTERMARK (white on dark bg) ── -->
+  <rect x="0" y="2" width="12" height="62" fill="#ffffff"/>
+  <rect x="0" y="2" width="56" height="12" fill="#ffffff"/>
+  <rect x="44" y="14" width="12" height="18" fill="#ffffff"/>
+  <rect x="0" y="52" width="56" height="12" fill="#ffffff"/>
+  <!-- Crossbar — orange accent (same as light version) -->
+  <rect x="32" y="40" width="24" height="12" fill="#E8630A"/>
+  <!-- Orange top accent line -->
+  <rect x="0" y="2" width="56" height="3" fill="#E8630A"/>
+
+  <!-- ── COMPANY NAME ── -->
+  <text x="74" y="31"
+        font-family="'Rajdhani','Trebuchet MS',Arial,sans-serif"
+        font-size="17" font-weight="700" letter-spacing="0.6"
+        fill="#ffffff">GÉNIE SANS FRONTIÈRES</text>
+  <text x="74" y="55"
+        font-family="'Rajdhani','Trebuchet MS',Arial,sans-serif"
+        font-size="23" font-weight="700" letter-spacing="0.5"
+        fill="#E8630A">GROUP</text>
+
+  <!-- Thin base line -->
+  <line x1="74" y1="60" x2="286" y2="60" stroke="#ffffff" stroke-width="0.6" opacity="0.20"/>
+</svg>
