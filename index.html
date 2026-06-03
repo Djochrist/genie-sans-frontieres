@@ -204,7 +204,9 @@
 
     <!-- ── HERO ── -->
     <section id="hero" class="section-hero" aria-label="Présentation">
-      <img src="/assets/images/hero.gif" class="hero-gif-bg" alt="" aria-hidden="true" />
+      <video class="hero-gif-bg" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+        <source src="/assets/images/hero.mp4" type="video/mp4" />
+      </video>
 
       <div class="hero-grid-overlay" aria-hidden="true"></div>
       <div class="hero-content">
@@ -239,8 +241,9 @@
         <div class="about-layout">
           <div class="about-portrait reveal-left">
             <img
-              src="/assets/images/projets/IMG-20260513-WA0041.jpg"
-              alt="Équipe Génie Sans Frontières sur un chantier"
+              id="about-photo"
+              src="/assets/images/qui-sommes-nous/chantier1.jpg"
+              alt="Images de l'équipe et des chantiers de Génie Sans Frontières"
               width="820" height="980" loading="lazy" />
             <p>"L'architecture est un outil de transformation sociale, culturelle et humaine."</p>
           </div>
@@ -250,7 +253,7 @@
               Nous sommes <strong>Génie Sans Frontières</strong>, un collectif de jeunes architectes unis par une même conviction.
             </p>
             <p>
-              Nous concevons l'espace non seulement comme une structure physique, mais comme un cadre de vie capable d'améliorer le quotidien des populations. Le groupe est né de la volonté de jeunes bâtisseurs d'idées de mettre leurs compétences, leur créativité et leur discipline au service de la société.
+              Nous concevons l'espace comme un cadre de vie capable de transformer le quotidien. Nés de la volonté de jeunes bâtisseurs, nous mettons nos compétences au service de la société.
             </p>
 
             <div class="about-pillars" aria-label="Nos principes">
@@ -273,7 +276,7 @@
         <div class="identity-panel reveal-up">
           <div class="identity-copy">
             <p class="eyebrow">02 - Notre Identité</p>
-            <h3>Ce qui nous distingue.</h3>
+            <h3>Notre Identité.</h3>
           </div>
           <div class="identity-grid">
             <div class="identity-list">
@@ -291,6 +294,17 @@
               <p>Valoriser le rôle des jeunes dans le développement du cadre de vie.</p>
               <p>Sensibiliser le public à l'importance de l'organisation de l'espace.</p>
             </div>
+          </div>
+        </div>
+
+        <div class="distingue-panel reveal-up">
+          <p class="eyebrow">Ce qui nous distingue</p>
+          <div class="distingue-grid">
+            <div class="distingue-item"><span class="distingue-check">✔</span><span>Une vision claire et collective</span></div>
+            <div class="distingue-item"><span class="distingue-check">✔</span><span>Une discipline de travail structurée</span></div>
+            <div class="distingue-item"><span class="distingue-check">✔</span><span>Un engagement réel envers la société</span></div>
+            <div class="distingue-item"><span class="distingue-check">✔</span><span>Une architecture pensée pour les personnes</span></div>
+            <div class="distingue-item"><span class="distingue-check">✔</span><span>Une équipe jeune mais déterminée</span></div>
           </div>
         </div>
 
@@ -326,8 +340,8 @@
         <div id="team" class="team-block reveal-up" aria-labelledby="team-title">
           <div class="team-head">
             <p class="eyebrow">04 - Membres Fondateurs</p>
-            <h2 id="team-title" class="section-title">L'équipe.</h2>
-            <p>Cinq regards qui transforment le vide en espace.</p>
+            <h2 id="team-title" class="section-title">Gestion administrative.</h2>
+            <p>Des profils complémentaires, une vision commune.</p>
           </div>
           <div class="team-grid">
             <article class="team-card" data-member="0">
@@ -343,43 +357,54 @@
             </article>
             <article class="team-card" data-member="1">
               <div class="team-card-photo">
-                <img src="/assets/images/team/maika.png" alt="Maika Maika David - Conception Design" loading="lazy" width="320" height="400"/>
+                <img src="/assets/images/team/Coordonateur%20adjoint.jpg" alt="Coordonnateur adjoint - Génie Sans Frontières" loading="lazy" width="320" height="400"/>
               </div>
               <div class="team-card-body">
                 <span>02</span>
+                <h3>Coordonnateur adjoint</h3>
+                <strong>Support au pilotage</strong>
+                <button class="team-profile-btn" aria-label="Voir le profil du coordonnateur adjoint">Voir le profil <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+              </div>
+            </article>
+            <article class="team-card" data-member="2">
+              <div class="team-card-photo">
+                <img src="/assets/images/team/maika.png" alt="Maika Maika David - Conception Design" loading="lazy" width="320" height="400"/>
+              </div>
+              <div class="team-card-body">
+                <span>03</span>
                 <h3>Maika Maika David</h3>
                 <strong>Conception - Design</strong>
                 <button class="team-profile-btn" aria-label="Voir le profil de Maika Maika David">Voir le profil <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
               </div>
             </article>
-            <article class="team-card" data-member="2">
+            <article class="team-card" data-member="3">
               <div class="team-card-photo">
                 <img src="/assets/images/team/bitota.png" alt="Bitota Kabeya Israella - Communication" loading="lazy" width="320" height="400"/>
               </div>
               <div class="team-card-body">
-                <span>03</span>
+                <span>04</span>
                 <h3>Bitota Kabeya Israella</h3>
                 <strong>Communication</strong>
                 <button class="team-profile-btn" aria-label="Voir le profil de Bitota Kabeya Israella">Voir le profil <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
               </div>
             </article>
-            <article class="team-card" data-member="3">
+            <article class="team-card" data-member="4">
               <div class="team-card-photo">
                 <img src="/assets/images/team/pierrot.png" alt="Pierrot - Technique Structure" loading="lazy" width="320" height="400"/>
               </div>
               <div class="team-card-body">
-                <span>04</span>
+                <span>05</span>
                 <h3>Pierrot</h3>
                 <strong>Technique - Structure</strong>
                 <button class="team-profile-btn" aria-label="Voir le profil de Pierrot">Voir le profil <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
               </div>
             </article>
-            <article class="team-card" data-member="4">
+            <article class="team-card" data-member="5">
               <div class="team-card-photo">
                 <img src="/assets/images/team/djochrist.jpg" alt="Kuma-Kuma Djo Christ - Développeur Informatique" loading="lazy" width="320" height="400"/>
               </div>
               <div class="team-card-body">
-                <span>05</span>
+                <span>06</span>
                 <h3>Kuma-Kuma Djo Christ</h3>
                 <strong>Développeur Informatique</strong>
                 <button class="team-profile-btn" aria-label="Voir le profil de Kuma-Kuma Djo Christ">Voir le profil <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
@@ -427,15 +452,15 @@
             <p class="eyebrow reveal-up">Ce que nous faisons</p>
             <h2 id="services-title" class="section-title reveal-up">Nos <span class="accent">Expertises</span></h2>
           </div>
-          <p class="svc-header-desc reveal-right">De la conception à la livraison, nos équipes spécialisées maîtrisent chaque métier du bâtiment et des travaux techniques.</p>
+          <p class="svc-header-desc reveal-right">De la conception à la livraison, nos équipes maîtrisent chaque métier du bâtiment.</p>
         </div>
 
         <div class="svc-grid reveal-up">
           <div class="svc-item">
             <span class="svc-n">01</span>
             <div class="svc-body">
-              <h3>Construction</h3>
-              <p>Bâtiments résidentiels, commerciaux et industriels. De la fondation à la finition.</p>
+              <h3>Architecture</h3>
+              <p>Conception, plans, permis et suivi de projets architecturaux.</p>
             </div>
           </div>
           <div class="svc-item">
@@ -528,7 +553,7 @@
             <h2 id="projects-title" class="section-title reveal-up">Chantiers &amp; <span class="accent">Projets</span></h2>
           </div>
           <div class="proj-header-right reveal-right">
-            <p class="proj-desc">Un portfolio qui témoigne de notre savoir-faire — de la fondation à la finition, chaque projet reflète notre engagement pour la qualité.</p>
+            <p class="proj-desc">De la fondation à la finition — chaque projet reflète notre engagement pour la qualité.</p>
             <a href="/projets.html" class="btn-voir-projets">
               <span>Voir tous les projets</span>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -537,11 +562,11 @@
         </div>
       </div>
       <div class="projects-grid projects-grid--featured" id="projects-grid">
-        <article class="project-item project-hero"><img src="/assets/images/projets/render1.png" alt="Projet architectural Génie Sans Frontières - Vue extérieure" loading="lazy" width="1200" height="700"/><div class="project-overlay"><span>Architecture</span><strong>Conception &amp; Réalisation</strong></div></article>
-        <article class="project-item project-hero-b"><img src="/assets/images/projets/render2.png" alt="Projet architectural Génie Sans Frontières - Cour intérieure" loading="lazy" width="900" height="600"/><div class="project-overlay"><span>Génie Civil</span><strong>Structure &amp; Aménagement</strong></div></article>
-        <article class="project-item project-lg"><img src="/assets/images/projets/IMG-20260513-WA0041.jpg" alt="Construction de bâtiment en cours à Lubumbashi" loading="lazy" width="900" height="650"/><div class="project-overlay"><span>Construction</span><strong>Élévation</strong></div></article>
-        <article class="project-item project-lg"><img src="/assets/images/projets/IMG-20260513-WA0042.jpg" alt="Chantier architectural Génie Sans Frontières" loading="lazy" width="650" height="900"/><div class="project-overlay"><span>Architecture</span><strong>De l'idée à la forme</strong></div></article>
-        <article class="project-item project-lg"><img src="/assets/images/projets/IMG-20260513-WA0046.jpg" alt="Travaux de gros oeuvre à Lubumbashi" loading="lazy" width="600" height="450"/><div class="project-overlay"><span>Génie Civil</span><strong>Gros œuvre</strong></div></article>
+        <article class="project-item project-hero"><img src="/assets/images/projets/architecture/render1.png" alt="Projet architectural Génie Sans Frontières - Vue extérieure" loading="lazy" width="1200" height="700"/><div class="project-overlay"><span>Architecture</span><strong>Conception &amp; Réalisation</strong></div></article>
+        <article class="project-item project-hero-b"><img src="/assets/images/projets/architecture/render2.png" alt="Projet architectural Génie Sans Frontières - Cour intérieure" loading="lazy" width="900" height="600"/><div class="project-overlay"><span>Génie Civil</span><strong>Structure &amp; Aménagement</strong></div></article>
+        <article class="project-item project-lg"><img src="/assets/images/projets/architecture/IMG-20260513-WA0041.jpg" alt="Construction de bâtiment en cours à Lubumbashi" loading="lazy" width="900" height="650"/><div class="project-overlay"><span>Construction</span><strong>Élévation</strong></div></article>
+        <article class="project-item project-lg"><img src="/assets/images/projets/architecture/IMG-20260513-WA0042.jpg" alt="Chantier architectural Génie Sans Frontières" loading="lazy" width="650" height="900"/><div class="project-overlay"><span>Architecture</span><strong>De l'idée à la forme</strong></div></article>
+        <article class="project-item project-lg"><img src="/assets/images/projets/architecture/IMG-20260513-WA0046.jpg" alt="Travaux de gros oeuvre à Lubumbashi" loading="lazy" width="600" height="450"/><div class="project-overlay"><span>Génie Civil</span><strong>Gros œuvre</strong></div></article>
       </div>
       <div class="proj-cta-wrap">
         <a href="/projets.html" class="btn btn-primary proj-cta-btn">
@@ -594,13 +619,13 @@
     </section>
 
     <!-- ── CTA ── -->
-    <section class="section-cta-banner" aria-labelledby="cta-title">
+    <section class="section-cta-banner section-dark" aria-labelledby="cta-title">
       <div class="container">
         <div class="cta-inner reveal-up">
           <p class="eyebrow">Passez à l'Action</p>
           <h2 id="cta-title" class="section-title">Votre projet mérite l'excellence.<br>Commençons <span class="accent">ensemble.</span></h2>
           <div class="cta-actions">
-            <a href="#contact" class="btn btn-primary">Demander un Devis</a>
+            <a href="#contact" class="btn btn-primary">Contactez-nous</a>
             <a href="#projects" class="btn btn-outline">Voir nos Réalisations</a>
           </div>
         </div>
@@ -608,7 +633,7 @@
     </section>
 
     <!-- ── CONTACT ── -->
-    <section id="contact" class="section-contact" aria-labelledby="contact-title">
+    <section id="contact" class="section-contact section-dark" aria-labelledby="contact-title">
       <div class="container">
         <div class="contact-grid">
 
@@ -635,7 +660,7 @@
                 <svg viewBox="0 0 24 24" fill="none" width="18" height="18" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="1.5"/></svg>
                 <div>
                   <span class="ci-label">Localisation</span>
-                  <span class="ci-value">Lubumbashi - République Démocratique du Congo</span>
+                  <span class="ci-value">Lubumbashi - Kinshasa - République Démocratique du Congo</span>
                 </div>
               </div>
             </address>
@@ -722,7 +747,7 @@
           <h4>Contact</h4>
           <p><a href="tel:+243834612285">+243 834 612 285</a></p>
           <p><a href="mailto:geniesansfrontieresgroupe@gmail.com">geniesansfrontieresgroupe@gmail.com</a></p>
-          <p>Lubumbashi - République Démocratique du Congo</p>
+          <p>Lubumbashi - Kinshasa - République Démocratique du Congo</p>
         </address>
       </div>
       <div class="footer-bottom">
