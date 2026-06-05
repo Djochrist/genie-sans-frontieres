@@ -17,18 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const updateNav = () => {
       const y = window.scrollY;
 
-      /* Hide topbar after scrolling past it */
-      if (topbar) {
-        if (y > topbarH) {
-          topbar.classList.add('topbar--hidden');
-          nav.classList.add('topbar-gone');
-        } else {
-          topbar.classList.remove('topbar--hidden');
-          nav.classList.remove('topbar-gone');
-        }
-      }
-
-      /* Solid / transparent nav */
       if (y > 60) {
         nav.classList.remove('transparent');
         nav.classList.add('solid');
@@ -46,8 +34,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const mobileNav = document.querySelector('.nav__mobile');
 
   if (burger && mobileNav) {
+    burger.setAttribute('aria-expanded', 'false');
+    mobileNav.setAttribute('aria-hidden', 'true');
+
     const toggleMenu = (open) => {
       mobileNav.classList.toggle('open', open);
+      mobileNav.setAttribute('aria-hidden', open ? 'false' : 'true');
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
       document.body.style.overflow = open ? 'hidden' : '';
       const spans = burger.querySelectorAll('span');
       if (open) {
