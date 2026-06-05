@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Réalisations — Génie Sans Frontières Group</title>
+  <meta name="description" content="Portfolio de réalisations de Génie Sans Frontières Group : architecture, construction et technique en RDC." />
+  <link rel="icon" type="image/png" href="images/logo/logo-transparent.png" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>.real-item { transition: opacity 0.3s ease, transform 0.3s ease; }</style>
+</head>
+<body>
+
+<canvas id="bgCanvas"></canvas>
+
+<a href="https://wa.me/243834612285" target="_blank" rel="noopener" class="wa-float" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<nav class="nav solid" id="nav">
+  <a href="index.html" class="nav__logo">
+    <img src="images/logo/logo-transparent.png" alt="Génie Sans Frontières Group" />
+  </a>
+  <div class="nav__center">
+    <ul class="nav__links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="realisations.html" class="active">Réalisations</a></li>
+      <li><a href="equipe.html">Équipe</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+  <div class="nav__right">
+    <a href="https://wa.me/243834612285" target="_blank" rel="noopener" class="nav__wa">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+    <a href="contact.html" class="nav__cta">Nous contacter</a>
+    <button class="nav__burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="nav__mobile" id="mobileNav">
+  <a href="index.html">Accueil</a>
+  <a href="services.html">Services</a>
+  <a href="realisations.html">Réalisations</a>
+  <a href="equipe.html">Équipe</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<section class="page-hero">
+  <div class="page-hero__inner">
+    <div class="page-hero__label">Portfolio</div>
+    <h1 class="page-hero__title">Nos <em>réalisations</em></h1>
+  </div>
+</section>
+
+<section class="section section--dark">
+  <div class="section__inner">
+    <div class="realizations__filters reveal">
+      <button class="filter-btn active" data-filter="all">Tout voir</button>
+      <button class="filter-btn" data-filter="architecture">Architecture</button>
+      <button class="filter-btn" data-filter="construction">Construction</button>
+      <button class="filter-btn" data-filter="technique">Technique</button>
+    </div>
+
+    <div class="realizations__grid">
+      <div class="real-item wide" data-cat="architecture"><img src="images/projets/architecture/IMG-20260513-WA0035.jpg" alt="Architecture" loading="lazy" /><div class="real-item__overlay"><span class="real-item__cat">Architecture</span></div></div>
+      <div class="real-item" data-cat="architecture"><img src="images/projets/architecture/IMG-20260513-WA0036.jpg" alt="Architecture" loading="lazy" /><div class="real-item__overlay"><span class="real-item__cat">Architecture</span></div></div>
+      <div class="real-item" data-cat="architecture"><img src="images/projets/architecture/IMG-20260513-WA0038.jpg" alt="Architecture" loading="lazy" /><div class="real-item__overlay"><span class="real-item__cat">Architecture</span></div></div>
+      <div class="real-item" data-cat="architecture"><img src="images/projets/architecture/IMG-20260513-WA0039.jpg" alt="Architecture" loading="lazy" /><div class="real-item__overlay"><span class="real-item__cat">Architecture</span></div></div>
+      <div class="real-item" data-cat="architecture"><img src="images/projets/architecture/IMG-20260513-WA0040.jpg" alt="Architecture" loading="lazy" /><div class="real-item__overlay"><span class="real-item__cat">Architecture</span></div></div>
+      <div class="real-item wide" data-cat="architecture"><img src="images/projets/architecture/IMG-20260513-WA0041.jpg" alt="Architecture" loading="lazy" /><div class="real-item__overlay"><span class="real-item__cat">Architecture</span></div></div>
+      <div class="real-item" data-cat="architecture"><img src="images/projets/architecture/IMG-20260513-WA0042.jpg" alt="Architecture" loading="lazy" /><div class="real-item__overlay"><span class="real-item__cat">Architecture</span></div></div>
+      <div class="real-item" data-cat="architecture"><img src="images/projets/architecture/IMG-20260513-WA0043.jpg" alt="Architecture" loading="lazy" /><div class="real-item__overlay"><span class="real-item__cat">Architecture</span></div></div>
+      <div class="real-item" data-cat="architecture"><img src="images/projets/architecture/IMG-20260513-WA0045.jpg" alt="Architecture" loading="lazy" /><div class="real-item__overlay"><span class="real-item__cat">Architecture</span></div></div>
+      <div class="real-item" data-cat="architecture"><img src="images/projets/architecture/IMG-20260513-WA0046.jpg" alt="Architecture" loading="lazy" /><div class="real-item__overlay"><span class="real-item__cat">Architecture</span></div></div>
+      <div class="real-item" data-cat="architecture"><img src="images/projets/architecture/IMG-20260513-WA0047.jpg" alt="Architecture" loading="lazy" /><div class="real-item__overlay"><span class="real-item__cat">Architecture</span></div></div>
+      <div class="real-item" data-cat="architecture"><img src="images/projets/architecture/IMG-20260513-WA0048.jpg" alt="Architecture" loading="lazy" /><div class="real-item__overlay"><span class="real-item__cat">Architecture</span></div></div>
+      <div class="real-item" data-cat="architecture"><img src="images/projets/architecture/IMG-20260513-WA0050.jpg" alt="Architecture" loading="lazy" /><div class="real-item__overlay"><span class="real-item__cat">Architecture</span></div></div>
+      <div class="real-item" data-cat="architecture"><img src="images/projets/architecture/IMG-20260513-WA0052.jpg" alt="Architecture" loading="lazy" /><div class="real-item__overlay"><span class="real-item__cat">Architecture</span></div></div>
+      <div class="real-item" data-cat="architecture"><img src="images/projets/architecture/render1.png" alt="Rendu 3D" loading="lazy" /><div class="real-item__overlay"><span class="real-item__cat">Architecture</span></div></div>
+      <div class="real-item" data-cat="architecture"><img src="images/projets/architecture/render2.png" alt="Rendu 3D" loading="lazy" /><div class="real-item__overlay"><span class="real-item__cat">Architecture</span></div></div>
+      <div class="real-item" data-cat="architecture"><img src="images/projets/architecture/IMG-20260602-WA0091.jpg" alt="Architecture" loading="lazy" /><div class="real-item__overlay"><span class="real-item__cat">Architecture</span></div></div>
+      <div class="real-item" data-cat="architecture"><img src="images/projets/architecture/IMG-20260602-WA0094.jpg" alt="Architecture" loading="lazy" /><div class="real-item__overlay"><span class="real-item__cat">Architecture</span></div></div>
+      <div class="real-item" data-cat="architecture"><img src="images/projets/architecture/IMG-20260602-WA0095.jpg" alt="Architecture" loading="lazy" /><div class="real-item__overlay"><span class="real-item__cat">Architecture</span></div></div>
+      <div class="real-item" data-cat="architecture"><img src="images/projets/architecture/IMG-20260602-WA0096.jpg" alt="Architecture" loading="lazy" /><div class="real-item__overlay"><span class="real-item__cat">Architecture</span></div></div>
+      <div class="real-item" data-cat="architecture"><img src="images/projets/architecture/IMG-20260602-WA0097.jpg" alt="Architecture" loading="lazy" /><div class="real-item__overlay"><span class="real-item__cat">Architecture</span></div></div>
+      <div class="real-item" data-cat="architecture"><img src="images/projets/architecture/IMG-20260602-WA0099.jpg" alt="Architecture" loading="lazy" /><div class="real-item__overlay"><span class="real-item__cat">Architecture</span></div></div>
+      <div class="real-item" data-cat="architecture"><img src="images/projets/architecture/realisation1.2.jpg" alt="Réalisation" loading="lazy" /><div class="real-item__overlay"><span class="real-item__cat">Architecture</span></div></div>
+      <div class="real-item wide" data-cat="construction"><img src="images/projets/construction/construction.jpg" alt="Construction" loading="lazy" /><div class="real-item__overlay"><span class="real-item__cat">Construction</span></div></div>
+      <div class="real-item" data-cat="construction"><img src="images/projets/construction/chantier1.jpg" alt="Chantier" loading="lazy" /><div class="real-item__overlay"><span class="real-item__cat">Construction</span></div></div>
+      <div class="real-item" data-cat="construction"><img src="images/projets/construction/realisation1.3.jpg" alt="Réalisation" loading="lazy" /><div class="real-item__overlay"><span class="real-item__cat">Construction</span></div></div>
+      <div class="real-item" data-cat="construction"><img src="images/projets/construction/IMG-20260602-WA0093(1).jpg" alt="Construction" loading="lazy" /><div class="real-item__overlay"><span class="real-item__cat">Construction</span></div></div>
+      <div class="real-item" data-cat="construction"><img src="images/projets/construction/IMG-20260602-WA0100.jpg" alt="Construction" loading="lazy" /><div class="real-item__overlay"><span class="real-item__cat">Construction</span></div></div>
+      <div class="real-item wide" data-cat="technique"><img src="images/projets/technique/IMG-20260602-WA0088.jpg" alt="Technique" loading="lazy" /><div class="real-item__overlay"><span class="real-item__cat">Technique</span></div></div>
+      <div class="real-item" data-cat="technique"><img src="images/projets/technique/IMG-20260602-WA0092.jpg" alt="Technique" loading="lazy" /><div class="real-item__overlay"><span class="real-item__cat">Technique</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact-strip">
+  <div class="contact-strip__inner">
+    <div class="contact-strip__text">
+      <h2>Vous avez<br />un projet ?</h2>
+      <p>Contactez-nous pour en discuter.</p>
+    </div>
+    <div class="contact-strip__actions">
+      <a href="contact.html" class="btn-white">Nous contacter</a>
+      <a href="https://wa.me/243834612285" target="_blank" rel="noopener" class="btn-white-outline">
+        <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer__grid">
+    <div>
+      <img src="images/logo/logo-transparent.png" alt="GSF" class="footer__brand-logo" />
+      <p class="footer__brand-desc">Collectif de jeunes architectes et ingénieurs unis par une même conviction.</p>
+      <div class="footer__socials">
+        <a href="https://wa.me/243834612285" target="_blank" rel="noopener" class="footer__social" aria-label="WhatsApp"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347M12 0C5.373 0 0 5.373 0 12c0 2.025.506 3.936 1.394 5.61L0 24l6.545-1.717A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg></a>
+        <a href="mailto:geniesansfrontieresgroupe@gmail.com" class="footer__social" aria-label="Email"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+      </div>
+    </div>
+    <div>
+      <div class="footer__heading">Navigation</div>
+      <ul class="footer__links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="realisations.html">Réalisations</a></li>
+        <li><a href="equipe.html">Équipe</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer__heading">Contact</div>
+      <div class="footer__contact-item"><span class="footer__contact-icon">📍</span><span class="footer__contact-text">Lubumbashi · Kinshasa · RDC</span></div>
+      <div class="footer__contact-item"><span class="footer__contact-icon">📞</span><span class="footer__contact-text"><a href="https://wa.me/243834612285">+243 834 612 285</a></span></div>
+      <div class="footer__contact-item"><span class="footer__contact-icon">✉</span><span class="footer__contact-text"><a href="mailto:geniesansfrontieresgroupe@gmail.com">geniesansfrontieresgroupe@gmail.com</a></span></div>
+    </div>
+    <div>
+      <div class="footer__heading">Catégories</div>
+      <ul class="footer__links">
+        <li><a href="realisations.html">Architecture</a></li>
+        <li><a href="realisations.html">Construction</a></li>
+        <li><a href="realisations.html">Technique</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <span class="footer__copy">© 2025 Génie Sans Frontières Group. Tous droits réservés.</span>
+    <span class="footer__credit">Designed by <a href="https://wa.me/243819730124" target="_blank" rel="noopener">djochristk</a></span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
