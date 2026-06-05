@@ -86,8 +86,8 @@ document.addEventListener('DOMContentLoaded', () => {
   if (heroContent) {
     window.addEventListener('scroll', () => {
       const y = window.scrollY;
-      heroContent.style.transform = `translateY(${y * 0.2}px)`;
-      heroContent.style.opacity = Math.max(0, 1 - y / 580);
+      heroContent.style.transform = `translateY(${Math.min(y * 0.15, 60)}px)`;
+      heroContent.style.opacity = `${Math.max(0.35, 1 - y / 420)}`;
     }, { passive: true });
   }
 
