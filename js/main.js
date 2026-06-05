@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════
-   GÉNIE SANS FRONTIÈRES GROUP — Main JS v3
+   GÉNIE SANS FRONTIÈRES GROUP — Main JS v4
    ═══════════════════════════════════════════════════ */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -8,11 +8,28 @@ document.addEventListener('DOMContentLoaded', () => {
   const loader = document.querySelector('.loader');
   if (loader) setTimeout(() => loader.classList.add('hidden'), 1600);
 
-  /* ── Navigation scroll ── */
-  const nav = document.querySelector('.nav');
+  /* ── Navigation + topbar scroll ── */
+  const nav    = document.querySelector('.nav');
+  const topbar = document.querySelector('.topbar');
+  const topbarH = topbar ? topbar.offsetHeight : 40;
+
   if (nav) {
     const updateNav = () => {
-      if (window.scrollY > 60) {
+      const y = window.scrollY;
+
+      /* Hide topbar after scrolling past it */
+      if (topbar) {
+        if (y > topbarH) {
+          topbar.classList.add('topbar--hidden');
+          nav.classList.add('topbar-gone');
+        } else {
+          topbar.classList.remove('topbar--hidden');
+          nav.classList.remove('topbar-gone');
+        }
+      }
+
+      /* Solid / transparent nav */
+      if (y > 60) {
         nav.classList.remove('transparent');
         nav.classList.add('solid');
       } else {
@@ -74,6 +91,49 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { passive: true });
   }
 
+  /* ── Conversation bubbles (Ce qui nous distingue) ── */
+  const chatWrap = document.querySelector('.chat__wrap');
+  if (chatWrap) {
+    const bubbles = chatWrap.querySelectorAll('.chat__bubble');
+    const chatObs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          bubbles.forEach((b, i) => setTimeout(() => b.classList.add('chat--visible'), i * 360));
+          chatObs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    chatObs.observe(chatWrap);
+  }
+
+  /* ── Hero rotating words ── */
+  const rotatingWord = document.getElementById('heroRotatingWord');
+  if (rotatingWord) {
+    const words = [
+      'Architectes',
+      'Ingénieurs',
+      'Innovateurs',
+      'Bâtisseurs',
+      'Leaders',
+      'Créateurs',
+    ];
+    let idx = 0;
+
+    const rotate = () => {
+      rotatingWord.classList.remove('fade-in');
+      rotatingWord.classList.add('fade-out');
+
+      setTimeout(() => {
+        idx = (idx + 1) % words.length;
+        rotatingWord.textContent = words[idx];
+        rotatingWord.classList.remove('fade-out');
+        rotatingWord.classList.add('fade-in');
+      }, 420);
+    };
+
+    setInterval(rotate, 2400);
+  }
+
   /* ── Realizations filter ── */
   const filterBtns = document.querySelectorAll('.filter-btn');
   const realItems  = document.querySelectorAll('.real-item[data-cat]');
@@ -124,7 +184,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ══════════════════════════════════════════
      CANVAS — Architectural grid + particles
-     Clean, minimal, no buildings, no scan lines
      ══════════════════════════════════════════ */
   const canvas = document.getElementById('bgCanvas');
   if (!canvas) return;
@@ -136,7 +195,6 @@ document.addEventListener('DOMContentLoaded', () => {
   resize();
   window.addEventListener('resize', resize, { passive: true });
 
-  /* Floating particles */
   const particles = Array.from({ length: 22 }, () => ({
     x: Math.random(),
     y: Math.random(),
@@ -147,16 +205,12 @@ document.addEventListener('DOMContentLoaded', () => {
     vx: (Math.random() - 0.5) * 0.00006,
   }));
 
-  /* Perspective grid lines (architectural feel) */
   function drawGrid() {
     const vp = { x: W * 0.5, y: H * 0.22 };
     const alpha = 0.028 + 0.008 * Math.sin(time * 0.25);
-
     ctx.strokeStyle = `rgba(232,99,10,${alpha})`;
     ctx.lineWidth = 0.5;
     ctx.beginPath();
-
-    /* Horizontal lines from vanishing point */
     const rows = 7;
     for (let r = 1; r <= rows; r++) {
       const t = r / rows;
@@ -165,8 +219,6 @@ document.addEventListener('DOMContentLoaded', () => {
       ctx.moveTo(vp.x - hw, y);
       ctx.lineTo(vp.x + hw, y);
     }
-
-    /* Converging vertical lines */
     const cols = 10;
     for (let c = 0; c <= cols; c++) {
       const t  = c / cols;
@@ -174,20 +226,13 @@ document.addEventListener('DOMContentLoaded', () => {
       ctx.moveTo(vp.x, vp.y);
       ctx.lineTo(x0, H * 1.1);
     }
-
     ctx.stroke();
   }
 
-  /* Orange corner accent dots */
   function drawCornerAccents() {
     const alpha = 0.06 + 0.03 * Math.sin(time * 0.4);
     ctx.fillStyle = `rgba(232,99,10,${alpha})`;
-
-    const dotSize = 2;
-    const spacing = 18;
-    const count   = 6;
-    const margin  = 40;
-
+    const dotSize = 2, spacing = 18, count = 6, margin = 40;
     for (let i = 0; i < count; i++) {
       for (let j = 0; j < count; j++) {
         ctx.fillRect(margin + j * spacing, margin + i * spacing, dotSize, dotSize);
@@ -196,7 +241,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  /* Floating particles */
   function drawParticles() {
     particles.forEach(p => {
       p.y -= p.vy;
@@ -204,7 +248,6 @@ document.addEventListener('DOMContentLoaded', () => {
       if (p.y < -0.02) { p.y = 1.02; p.x = Math.random(); }
       if (p.x < 0) p.x = 1;
       if (p.x > 1) p.x = 0;
-
       const a = p.alpha * (0.5 + 0.5 * Math.sin(time * 1.5 + p.phase));
       ctx.beginPath();
       ctx.arc(p.x * W, p.y * H, p.r, 0, Math.PI * 2);
@@ -216,11 +259,9 @@ document.addEventListener('DOMContentLoaded', () => {
   function render() {
     ctx.clearRect(0, 0, W, H);
     time += 0.004;
-
     drawGrid();
     drawCornerAccents();
     drawParticles();
-
     animId = requestAnimationFrame(render);
   }
 

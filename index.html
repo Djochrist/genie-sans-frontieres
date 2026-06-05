@@ -14,6 +14,42 @@
 </head>
 <body>
 
+<!-- Top Bar -->
+<div class="topbar" id="topbar">
+  <div class="topbar__inner">
+    <div class="topbar__left">
+      <span class="topbar__addr">
+        <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+        Lubumbashi · Kinshasa · RDC
+      </span>
+      <span class="topbar__sep"></span>
+      <a href="tel:+243834612285">
+        <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+        +243 834 612 285
+      </a>
+      <span class="topbar__sep"></span>
+      <a href="mailto:geniesansfrontieresgroupe@gmail.com">
+        <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        geniesansfrontieresgroupe@gmail.com
+      </a>
+    </div>
+    <div class="topbar__right">
+      <a href="https://wa.me/243834612285" target="_blank" rel="noopener" class="topbar__social" aria-label="WhatsApp">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      </a>
+      <a href="https://www.facebook.com/" target="_blank" rel="noopener" class="topbar__social" aria-label="Facebook">
+        <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="topbar__social" aria-label="Instagram">
+        <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="var(--black)" stroke-width="2"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/" target="_blank" rel="noopener" class="topbar__social" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+      </a>
+    </div>
+  </div>
+</div>
+
 <!-- Canvas background animation -->
 <canvas id="bgCanvas"></canvas>
 
@@ -23,7 +59,7 @@
   <div class="loader__bar"><div class="loader__bar-fill"></div></div>
 </div>
 
-<!-- WhatsApp Float — blanc -->
+<!-- WhatsApp Float -->
 <a href="https://wa.me/243834612285" target="_blank" rel="noopener" class="wa-float" aria-label="WhatsApp">
   <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
@@ -45,9 +81,6 @@
     </ul>
   </div>
   <div class="nav__right">
-    <a href="https://wa.me/243834612285" target="_blank" rel="noopener" class="nav__wa" aria-label="WhatsApp">
-      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-    </a>
     <a href="contact.html" class="nav__cta">Nous contacter</a>
     <button class="nav__burger" id="burger" aria-label="Menu">
       <span></span><span></span><span></span>
@@ -75,7 +108,7 @@
   <div class="hero__grid-lines"></div>
 
   <div class="hero__content">
-    <div class="hero__label">Génie Sans Frontières Group — RDC</div>
+    <div class="hero__label">Génie Sans Frontières Group</div>
     <h1 class="hero__title">
       Bâtir<br /><em>l'avenir</em><br />ensemble
     </h1>
@@ -83,15 +116,54 @@
       Collectif de jeunes architectes et ingénieurs unis par une même conviction :
       concevoir des espaces capables de transformer les sociétés.
     </p>
+    <div class="hero__rotating-wrap">
+      <span class="hero__rotating-label">Nous sommes :</span>
+      <span class="hero__rotating-word fade-in" id="heroRotatingWord">Architectes</span>
+    </div>
     <div class="hero__actions">
       <a href="realisations.html" class="btn-primary"><span>Voir nos réalisations</span></a>
-      <a href="contact.html" class="btn-outline">Travailler avec nous</a>
+      <a href="contact.html" class="btn-outline-hero">Travailler avec nous</a>
     </div>
   </div>
 
   <div class="hero__scroll">
     <span>Défiler</span>
     <div class="hero__scroll-line"></div>
+  </div>
+</section>
+
+<!-- ══════════════ INFOS ══════════════ -->
+<section class="section section--slate">
+  <div class="section__inner">
+    <div class="infos__header">
+      <div>
+        <p class="section__tag">Actualités</p>
+        <h2 class="section__title reveal">Infos</h2>
+      </div>
+    </div>
+    <div class="infos__grid">
+      <article class="info-card reveal">
+        <div class="info-card__date">Juin 2025</div>
+        <div class="info-card__cat">Développement</div>
+        <h3 class="info-card__title">GSF Group s'étend dans toute la RDC</h3>
+        <p class="info-card__text">Notre collectif renforce sa présence à Lubumbashi et Kinshasa, avec de nouveaux projets en cours dans les deux grandes villes du pays.</p>
+        <span class="info-card__link">Lire la suite →</span>
+      </article>
+      <article class="info-card reveal reveal-delay-1">
+        <div class="info-card__date">Mai 2025</div>
+        <div class="info-card__cat">Architecture</div>
+        <h3 class="info-card__title">Nouveau chantier résidentiel à Lubumbashi</h3>
+        <p class="info-card__text">Un projet résidentiel ambitieux est en cours de conception par notre équipe d'architectes et d'ingénieurs engagés.</p>
+        <span class="info-card__link">Lire la suite →</span>
+      </article>
+      <article class="info-card reveal reveal-delay-2">
+        <div class="info-card__date">Avril 2025</div>
+        <div class="info-card__cat">Recrutement</div>
+        <h3 class="info-card__title">Rejoignez notre collectif de jeunes bâtisseurs</h3>
+        <p class="info-card__text">GSF Group recherche des architectes et ingénieurs passionnés, prêts à mettre leur talent au service du développement de la RDC.</p>
+        <span class="info-card__link">Rejoindre →</span>
+      </article>
+    </div>
   </div>
 </section>
 
@@ -105,7 +177,7 @@
           Une vision<br />collective de<br /><em>l'espace</em>
         </h2>
         <p class="reveal reveal-delay-1">
-          Nous sommes <strong style="color:var(--white)">GÉNIE SANS FRONTIÈRE</strong>, un collectif de jeunes architectes unis par une même conviction.
+          Nous sommes <strong style="color:var(--orange)">GÉNIE SANS FRONTIÈRE</strong>, un collectif de jeunes architectes unis par une même conviction.
         </p>
         <p class="reveal reveal-delay-2">
           Nous concevons l'espace non seulement comme une structure physique, mais comme un cadre de vie capable d'améliorer le quotidien des populations.
@@ -185,26 +257,26 @@
 
     <div style="margin-top:5rem">
       <p class="section__tag reveal">Ce qui nous distingue</p>
-      <div class="distinctions__list reveal">
-        <div class="distinction-item">
-          <span class="distinction-item__icon">◈</span>
-          <span class="distinction-item__text">Une vision claire et collective</span>
+      <div class="chat__wrap" id="chatDistinctions">
+        <div class="chat__bubble chat__bubble--left">
+          <span class="chat__avatar">GSF</span>
+          <div class="chat__text">Une vision claire et collective — chaque membre partage la même conviction.</div>
         </div>
-        <div class="distinction-item">
-          <span class="distinction-item__icon">◈</span>
-          <span class="distinction-item__text">Une discipline de travail structurée</span>
+        <div class="chat__bubble chat__bubble--right">
+          <span class="chat__avatar">GSF</span>
+          <div class="chat__text">Une discipline de travail structurée, du premier plan à la dernière finition.</div>
         </div>
-        <div class="distinction-item">
-          <span class="distinction-item__icon">◈</span>
-          <span class="distinction-item__text">Un engagement réel envers la société</span>
+        <div class="chat__bubble chat__bubble--left">
+          <span class="chat__avatar">GSF</span>
+          <div class="chat__text">Un engagement réel envers la société congolaise et son développement.</div>
         </div>
-        <div class="distinction-item">
-          <span class="distinction-item__icon">◈</span>
-          <span class="distinction-item__text">Une architecture pensée pour les personnes</span>
+        <div class="chat__bubble chat__bubble--right">
+          <span class="chat__avatar">GSF</span>
+          <div class="chat__text">Une architecture pensée pour les personnes, adaptée à notre réalité.</div>
         </div>
-        <div class="distinction-item">
-          <span class="distinction-item__icon">◈</span>
-          <span class="distinction-item__text">Une équipe jeune mais déterminée</span>
+        <div class="chat__bubble chat__bubble--left">
+          <span class="chat__avatar">GSF</span>
+          <div class="chat__text">Une équipe jeune, déterminée, prête à bâtir l'avenir de la RDC.</div>
         </div>
       </div>
     </div>
@@ -256,7 +328,7 @@
 <!-- ══════════════ CONCEPTION ARCHITECTURALE ══════════════ -->
 <div class="concept concept--a" style="position:relative;z-index:1">
   <div class="concept__visual">
-    <img src="images/projets/architecture/render1.png" alt="Maquette architecturale" />
+    <img src="images/projets/architecture/IMG-20260602-WA0095.jpg" alt="Conception architecturale GSF" />
   </div>
   <div class="concept__content reveal-right">
     <div class="concept__num">01</div>
@@ -271,7 +343,7 @@
 <!-- ══════════════ MAQUETTES ══════════════ -->
 <div class="concept concept--b concept--reverse" style="position:relative;z-index:1">
   <div class="concept__visual">
-    <img src="images/projets/architecture/render2.png" alt="Visualisation 3D" />
+    <img src="images/projets/architecture/IMG-20260513-WA0046.jpg" alt="Visualisation architecturale GSF" />
   </div>
   <div class="concept__content reveal-left">
     <div class="concept__num">02</div>
