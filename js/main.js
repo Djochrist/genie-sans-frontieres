@@ -17,6 +17,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const updateNav = () => {
       const y = window.scrollY;
 
+      if (topbar) {
+        if (y > topbarH) {
+          nav.classList.add('topbar-gone');
+        } else {
+          nav.classList.remove('topbar-gone');
+        }
+      }
+
       if (y > 60) {
         nav.classList.remove('transparent');
         nav.classList.add('solid');

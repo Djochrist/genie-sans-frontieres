@@ -36,7 +36,7 @@
   --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
   /* Layout */
-  --topbar-h: 56px;
+  --topbar-h: 42px;
   --nav-h: 76px;
   --trans: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -84,10 +84,11 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
    TOP BAR (pre-header)
    ════════════════════════════════════════ */
 .topbar {
-  position: fixed;
+  position: sticky;
   top: 0; left: 0; right: 0;
   z-index: 1100;
-  height: 42px;
+  min-height: 42px;
+  height: auto;
   background: #090909;
   border-bottom: 1px solid rgba(255,255,255,0.08);
   display: flex;
@@ -104,6 +105,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
+  min-height: var(--topbar-h);
 }
 
 .topbar__left {
@@ -168,6 +170,9 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .topbar__left .topbar__addr { display: none; }
   .topbar__left { gap: 0.75rem; justify-content: center; }
   .topbar__left a, .topbar__left span { white-space: normal; }
+  .topbar__right { gap: 0.35rem; }
+  .topbar__social { width: 24px; height: 24px; }
+  .topbar__social svg { width: 12px; height: 12px; }
 }
 
 /* ════════════════════════════════════════
@@ -187,7 +192,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   position: fixed;
   top: var(--topbar-h); left: 0; right: 0;
   z-index: 1000;
-  height: var(--nav-h);
+  min-height: var(--nav-h);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -197,7 +202,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 
 .nav.topbar-gone {
-  top: var(--topbar-h);
+  top: 0;
 }
 
 .nav.transparent {
@@ -344,7 +349,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
    ════════════════════════════════════════ */
 .hero {
   position: relative;
-  width: 100%; height: 100vh; min-height: 620px;
+  width: 100%; min-height: 100vh;
   display: flex; align-items: center;
   overflow: hidden;
 }
