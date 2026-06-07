@@ -798,7 +798,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .info-card:hover { border-color: rgba(232,99,10,0.2); transform: translateY(-4px); }
 .info-card:hover::before { height: 100%; }
 .info-card__date { font-size: 0.69rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--orange); margin-bottom: 0.3rem; }
-.info-card__cat { font-size: 0.67rem; color: rgba(17,17,17,0.4); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 1.1rem; padding-bottom: 1rem; border-bottom: 1px solid rgba(17,17,17,0.07); }
+.info-card__cat { font-size: 0.67rem; color: rgba(17,17,17,0.4); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 1.1rem; padding-bottom: 1rem; border-bottom: 1px solid rgba(17,17,17,0.04); }
 .info-card__title { font-family: var(--font-head); font-size: 1.05rem; font-weight: 800; line-height: 1.35; color: var(--black); margin-bottom: 0.85rem; }
 .info-card__text { font-size: 0.86rem; color: rgba(17,17,17,0.66); line-height: 1.75; }
 .info-card__link { display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 1.4rem; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: var(--orange); transition: gap var(--trans); }
@@ -925,7 +925,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
    CONTACT STRIP
    ════════════════════════════════════════ */
 .contact-strip { padding: 5.5rem 5%; background: var(--orange); position: relative; overflow: hidden; z-index: 1; }
-.contact-strip::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px); background-size: 56px 56px; }
+.contact-strip::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px); background-size: 56px 56px; }
 .contact-strip__inner { max-width: 1400px; margin: 0 auto; position: relative; z-index: 1; display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
 .contact-strip__text h2 { font-family: var(--font-head); font-size: clamp(1.8rem, 3.5vw, 3.2rem); font-weight: 900; text-transform: uppercase; letter-spacing: -0.02em; color: var(--white); line-height: 1.08; }
 .contact-strip__text p { font-size: 1rem; color: rgba(255,255,255,0.82); margin-top: 0.65rem; }
@@ -961,7 +961,7 @@ footer { background: var(--footer-bg); padding: 4.5rem 5% 2rem; position: relati
 .footer__contact-item { display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 1rem; min-width: 0; }
 .footer__contact-icon { color: var(--orange); font-size: 0.95rem; margin-top: 2px; flex-shrink: 0; }
 .footer__contact-text { font-size: 0.95rem; color: rgba(255,255,255,0.9); line-height: 1.8; min-width: 0; word-break: break-word; overflow-wrap: break-word; white-space: normal; }
-.footer__contact-text a { color: rgba(255,255,255,0.9); transition: color var(--trans); display: inline-block; white-space: normal; word-break: break-word; overflow-wrap: break-word; }
+.footer__contact-text a { color: rgba(255,255,255,0.9); transition: color var(--trans); display: block; white-space: normal; word-break: break-word; overflow-wrap: break-word; }
 .footer__contact-item, .footer__grid > div { min-width: 0; }
 .footer__bottom { max-width: 1400px; margin: 2rem auto 0; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
 .footer__copy { font-size: 0.82rem; color: rgba(255,255,255,0.65); }
@@ -977,6 +977,11 @@ footer { background: var(--footer-bg); padding: 4.5rem 5% 2rem; position: relati
   .footer__contact-text { width: 100%; }
   .footer__socials { justify-content: flex-start; }
   .footer__bottom { justify-content: center; text-align: center; }
+}
+
+/* Remove decorative grid on small screens to avoid visible horizontal lines */
+@media (max-width: 768px) {
+  .contact-strip::before { display: none; }
 }
 
 @media (max-width: 480px) {
