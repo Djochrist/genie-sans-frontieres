@@ -79,6 +79,19 @@ document.addEventListener('DOMContentLoaded', () => {
     if (link.getAttribute('href') === page) link.classList.add('active');
   });
 
+  // If the user clicks the nav link for the current page, scroll to top (provide feedback)
+  document.querySelectorAll('.nav__links a').forEach(link => {
+    link.addEventListener('click', (e) => {
+      const href = link.getAttribute('href');
+      if (!href) return;
+      const curr = window.location.pathname.split('/').pop() || 'index.html';
+      if (href === curr) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    });
+  });
+
   /* ── Scroll reveal ── */
   const revealObs = new IntersectionObserver((entries) => {
     entries.forEach(e => {
@@ -181,33 +194,6 @@ document.addEventListener('DOMContentLoaded', () => {
     setInterval(rotateTb, 2400);
   }
 
-  /* ── Hero rotating words ── */
-  const rotatingWord = document.getElementById('heroRotatingWord');
-  if (rotatingWord) {
-    const words = [
-      'Architectes',
-      'Ingénieurs',
-      'Innovateurs',
-      'Bâtisseurs',
-      'Leaders',
-      'Créateurs',
-    ];
-    let idx = 0;
-
-    const rotate = () => {
-      rotatingWord.classList.remove('fade-in');
-      rotatingWord.classList.add('fade-out');
-
-      setTimeout(() => {
-        idx = (idx + 1) % words.length;
-        rotatingWord.textContent = words[idx];
-        rotatingWord.classList.remove('fade-out');
-        rotatingWord.classList.add('fade-in');
-      }, 420);
-    };
-
-    setInterval(rotate, 2400);
-  }
 
   /* ── Realizations filter ── */
   const filterBtns = document.querySelectorAll('.filter-btn');
