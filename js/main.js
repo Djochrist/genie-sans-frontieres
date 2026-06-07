@@ -8,29 +8,37 @@ document.addEventListener('DOMContentLoaded', () => {
   const loader = document.querySelector('.loader');
   if (loader) setTimeout(() => loader.classList.add('hidden'), 1600);
 
-  /* ── Navigation + topbar scroll ── */
-  const nav    = document.querySelector('.nav');
-  const topbar = document.querySelector('.topbar');
-  const topbarH = topbar ? topbar.offsetHeight : 40;
+  /* ── Navigation + topbar + site-header scroll ── */
+  const nav        = document.querySelector('.nav');
+  const topbar     = document.querySelector('.topbar');
+  const siteHeader = document.querySelector('.site-header');
+  const topbarH    = topbar     ? topbar.offsetHeight     : 42;
+  const headerH    = siteHeader ? siteHeader.offsetHeight : 88;
+  const scrollThreshold = topbarH + headerH;
 
   if (nav) {
     const updateNav = () => {
       const y = window.scrollY;
 
-      if (topbar) {
-        if (y > topbarH) {
-          nav.classList.add('topbar-gone');
-        } else {
-          nav.classList.remove('topbar-gone');
-        }
+      if (y > scrollThreshold) {
+        nav.classList.add('topbar-gone');
+        if (siteHeader) siteHeader.classList.add('header-hidden');
+      } else {
+        nav.classList.remove('topbar-gone');
+        if (siteHeader) siteHeader.classList.remove('header-hidden');
       }
 
-      if (y > 60) {
+      if (document.querySelector('.hero')) {
+        if (y > 80) {
+          nav.classList.remove('transparent');
+          nav.classList.add('solid');
+        } else {
+          nav.classList.remove('solid');
+          nav.classList.add('transparent');
+        }
+      } else {
         nav.classList.remove('transparent');
         nav.classList.add('solid');
-      } else {
-        nav.classList.remove('solid');
-        nav.classList.add('transparent');
       }
     };
     updateNav();
@@ -92,19 +100,85 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { passive: true });
   }
 
-  /* ── Conversation bubbles (Ce qui nous distingue) ── */
+  /* ── Ce qui nous distingue — bulles de conversation, animation infinie ── */
   const chatWrap = document.querySelector('.chat__wrap');
   if (chatWrap) {
     const bubbles = chatWrap.querySelectorAll('.chat__bubble');
+    let timers = [];
+    let loopTimer = null;
+
+    const clearBubbles = () => {
+      timers.forEach(t => clearTimeout(t));
+      timers = [];
+      clearTimeout(loopTimer);
+      loopTimer = null;
+      bubbles.forEach(b => b.classList.remove('chat--visible'));
+    };
+
+    const runCycle = () => {
+      bubbles.forEach(b => b.classList.remove('chat--visible'));
+      bubbles.forEach((b, i) => {
+        const t = setTimeout(() => b.classList.add('chat--visible'), i * 380);
+        timers.push(t);
+      });
+      loopTimer = setTimeout(() => {
+        timers = [];
+        runCycle();
+      }, bubbles.length * 380 + 2800);
+    };
+
     const chatObs = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          bubbles.forEach((b, i) => setTimeout(() => b.classList.add('chat--visible'), i * 360));
-          chatObs.unobserve(entry.target);
+          runCycle();
+        } else {
+          clearBubbles();
         }
       });
-    }, { threshold: 0.12 });
+    }, { threshold: 0.15 });
+
     chatObs.observe(chatWrap);
+  }
+
+  /* ── Qui sommes-nous — rotation des 3 photos par tour ── */
+  const aboutImgMain   = document.getElementById('aboutImgMain');
+  const aboutImgAccent = document.getElementById('aboutImgAccent');
+  if (aboutImgMain && aboutImgAccent) {
+    const photoSets = [
+      { main: 'images/qui-sommes-nous/realisation1.2.jpg', accent: 'images/qui-sommes-nous/chantier1.jpg' },
+      { main: 'images/qui-sommes-nous/chantier1.jpg',      accent: 'images/qui-sommes-nous/realisation1.3.jpg' },
+      { main: 'images/qui-sommes-nous/realisation1.3.jpg', accent: 'images/qui-sommes-nous/realisation1.2.jpg' },
+    ];
+    let photoIdx = 0;
+    setInterval(() => {
+      photoIdx = (photoIdx + 1) % photoSets.length;
+      aboutImgMain.style.opacity   = '0';
+      aboutImgAccent.style.opacity = '0';
+      setTimeout(() => {
+        aboutImgMain.src   = photoSets[photoIdx].main;
+        aboutImgAccent.src = photoSets[photoIdx].accent;
+        aboutImgMain.style.opacity   = '1';
+        aboutImgAccent.style.opacity = '1';
+      }, 650);
+    }, 3800);
+  }
+
+  /* ── Topbar ticker ── */
+  const topbarWord = document.getElementById('topbarTickerWord');
+  if (topbarWord) {
+    const tbWords = ['Architectes', 'Ingénieurs', 'Innovateurs', 'Bâtisseurs', 'Leaders', 'Créateurs'];
+    let tbIdx = 0;
+    const rotateTb = () => {
+      topbarWord.classList.remove('tb-fade-in');
+      topbarWord.classList.add('tb-fade-out');
+      setTimeout(() => {
+        tbIdx = (tbIdx + 1) % tbWords.length;
+        topbarWord.textContent = tbWords[tbIdx];
+        topbarWord.classList.remove('tb-fade-out');
+        topbarWord.classList.add('tb-fade-in');
+      }, 360);
+    };
+    setInterval(rotateTb, 2400);
   }
 
   /* ── Hero rotating words ── */
