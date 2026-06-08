@@ -620,14 +620,14 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 /* ════════════════════════════════════════
    SECTIONS
    ════════════════════════════════════════ */
-.section { padding: 6rem 5%; position: relative; z-index: 1; overflow-x: hidden; }
+.section { padding: 6rem 5%; position: relative; z-index: 1; overflow: hidden; }
 .section--deep  { background: var(--sec-deep); }
 .section--dark  { background: var(--sec-dark); }
 .section--navy  { background: var(--sec-navy); }
 .section--slate { background: var(--sec-slate); }
 .section--dark2 { background: var(--sec-navy); }
 
-.section__inner { width: 100%; max-width: 1400px; margin: 0 auto; overflow-x: hidden; box-sizing: border-box; }
+.section__inner { width: 100%; max-width: 1400px; margin: 0 auto; overflow: hidden; box-sizing: border-box; }
 
 .section__tag {
   font-family: var(--font-head);
@@ -809,7 +809,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 /* ════════════════════════════════════════
    SERVICES
    ════════════════════════════════════════ */
-.services__grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; margin-top: 3.5rem; }
+.services__grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; margin-top: 3.5rem; overflow: hidden; }
 .service__card {
   background: var(--white);
   border: 1px solid rgba(17,17,17,0.08);
@@ -840,7 +840,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .filter-btn:hover, .filter-btn.active { background: var(--orange); border-color: var(--orange); color: var(--white); }
 
-.realizations__grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 5px; }
+.realizations__grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 5px; overflow: hidden; }
 .real-item { position: relative; overflow: hidden; aspect-ratio: 1; cursor: pointer; background: var(--sec-deep); transition: opacity 0.3s, transform 0.3s; }
 .real-item.wide { grid-column: span 2; aspect-ratio: 2/1; }
 .real-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s cubic-bezier(0.4,0,0.2,1); filter: brightness(0.88); }
@@ -852,7 +852,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 /* ════════════════════════════════════════
    TEAM
    ════════════════════════════════════════ */
-.team__grid { display: grid; grid-template-columns: repeat(5,1fr); gap: 2px; margin-top: 3.5rem; }
+.team__grid { display: grid; grid-template-columns: repeat(5,1fr); gap: 2px; margin-top: 3.5rem; overflow: hidden; }
 .team__card { position: relative; overflow: hidden; background: var(--white); cursor: pointer; }
 .team__card-img { width: 100%; aspect-ratio: 3/4; object-fit: cover; object-position: top center; filter: brightness(0.8) grayscale(0.1); transition: all 0.6s cubic-bezier(0.4,0,0.2,1); }
 .team__card:hover .team__card-img { filter: brightness(0.6) grayscale(0); transform: scale(1.04); }
@@ -911,7 +911,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 /* ════════════════════════════════════════
    TESTIMONIALS
    ════════════════════════════════════════ */
-.testimonials__grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 2px; margin-top: 3.5rem; }
+.testimonials__grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 2px; margin-top: 3.5rem; overflow: hidden; }
 .testimonial { position: relative; overflow: hidden; background: var(--white); border: 1px solid rgba(17,17,17,0.07); transition: all var(--trans); }
 .testimonial:hover { border-color: rgba(232,99,10,0.2); transform: translateY(-4px); box-shadow: 0 18px 45px rgba(0,0,0,0.08); }
 .testimonial__photo { width: 100%; height: 210px; object-fit: cover; filter: brightness(0.72); transition: transform 0.6s ease, filter 0.6s ease; display: block; }
