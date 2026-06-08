@@ -333,4 +333,56 @@ document.addEventListener('DOMContentLoaded', () => {
     else render();
   });
 
+  /* ── Lightbox ── */
+  const lbOverlay = document.getElementById('lbOverlay');
+  const lbImg     = document.getElementById('lbImg');
+  const lbCaption = document.getElementById('lbCaption');
+  const lbClose   = document.getElementById('lbClose');
+  const lbPrev    = document.getElementById('lbPrev');
+  const lbNext    = document.getElementById('lbNext');
+
+  if (lbOverlay) {
+    const triggers = Array.from(document.querySelectorAll('.lb-trigger'));
+    let current = 0;
+
+    const openLb = (index) => {
+      current = index;
+      const el = triggers[current];
+      lbImg.src = el.dataset.src;
+      lbImg.alt = el.dataset.cat || '';
+      lbCaption.textContent = el.dataset.cat || '';
+      lbOverlay.classList.add('lb-open');
+      document.body.style.overflow = 'hidden';
+    };
+
+    const closeLb = () => {
+      lbOverlay.classList.remove('lb-open');
+      document.body.style.overflow = '';
+      setTimeout(() => { lbImg.src = ''; }, 300);
+    };
+
+    const showPrev = () => openLb((current - 1 + triggers.length) % triggers.length);
+    const showNext = () => openLb((current + 1) % triggers.length);
+
+    triggers.forEach((el, i) => el.addEventListener('click', () => openLb(i)));
+    lbClose.addEventListener('click', closeLb);
+    lbPrev.addEventListener('click', showPrev);
+    lbNext.addEventListener('click', showNext);
+    lbOverlay.addEventListener('click', (e) => { if (e.target === lbOverlay) closeLb(); });
+
+    document.addEventListener('keydown', (e) => {
+      if (!lbOverlay.classList.contains('lb-open')) return;
+      if (e.key === 'Escape')     closeLb();
+      if (e.key === 'ArrowLeft')  showPrev();
+      if (e.key === 'ArrowRight') showNext();
+    });
+
+    let touchStartX = 0;
+    lbOverlay.addEventListener('touchstart', (e) => { touchStartX = e.touches[0].clientX; }, { passive: true });
+    lbOverlay.addEventListener('touchend', (e) => {
+      const dx = e.changedTouches[0].clientX - touchStartX;
+      if (Math.abs(dx) > 50) dx < 0 ? showNext() : showPrev();
+    });
+  }
+
 });

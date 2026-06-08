@@ -385,23 +385,23 @@
     </div>
 
     <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;max-width:100%;overflow-x:hidden;">
-      <div class="real-item reveal" style="grid-column:span 2;aspect-ratio:16/9">
+      <div class="real-item reveal lb-trigger" style="grid-column:span 2;aspect-ratio:16/9" data-src="images/projets/architecture/IMG-20260602-WA0091.jpg" data-cat="Architecture">
         <img src="images/projets/architecture/IMG-20260602-WA0091.jpg" alt="Architecture" />
         <div class="real-item__overlay"><span class="real-item__cat">Architecture</span></div>
       </div>
-      <div class="real-item reveal reveal-delay-1">
+      <div class="real-item reveal reveal-delay-1 lb-trigger" data-src="images/projets/architecture/IMG-20260513-WA0042.jpg" data-cat="Architecture">
         <img src="images/projets/architecture/IMG-20260513-WA0042.jpg" alt="Architecture" />
         <div class="real-item__overlay"><span class="real-item__cat">Architecture</span></div>
       </div>
-      <div class="real-item reveal" style="aspect-ratio:1">
+      <div class="real-item reveal lb-trigger" style="aspect-ratio:1" data-src="images/projets/construction/construction.jpg" data-cat="Construction">
         <img src="images/projets/construction/construction.jpg" alt="Construction" />
         <div class="real-item__overlay"><span class="real-item__cat">Construction</span></div>
       </div>
-      <div class="real-item reveal reveal-delay-1" style="aspect-ratio:1">
+      <div class="real-item reveal reveal-delay-1 lb-trigger" style="aspect-ratio:1" data-src="images/projets/technique/IMG-20260602-WA0088.jpg" data-cat="Technique">
         <img src="images/projets/technique/IMG-20260602-WA0088.jpg" alt="Technique" />
         <div class="real-item__overlay"><span class="real-item__cat">Technique</span></div>
       </div>
-      <div class="real-item reveal reveal-delay-2" style="aspect-ratio:1">
+      <div class="real-item reveal reveal-delay-2 lb-trigger" style="aspect-ratio:1" data-src="images/projets/architecture/IMG-20260513-WA0050.jpg" data-cat="Architecture">
         <img src="images/projets/architecture/IMG-20260513-WA0050.jpg" alt="Architecture" />
         <div class="real-item__overlay"><span class="real-item__cat">Architecture</span></div>
       </div>
@@ -593,6 +593,17 @@
     <span class="footer__credit">Designed by <a href="https://wa.me/243819730124" target="_blank" rel="noopener">djochristk</a></span>
   </div>
 </footer>
+
+<!-- Lightbox -->
+<div class="lb-overlay" id="lbOverlay" role="dialog" aria-modal="true" aria-label="Visionneuse photo">
+  <button class="lb-close" id="lbClose" aria-label="Fermer">✕</button>
+  <button class="lb-arrow lb-prev" id="lbPrev" aria-label="Photo précédente">&#8249;</button>
+  <div class="lb-content">
+    <img class="lb-img" id="lbImg" src="" alt="" />
+    <p class="lb-caption" id="lbCaption"></p>
+  </div>
+  <button class="lb-arrow lb-next" id="lbNext" aria-label="Photo suivante">&#8250;</button>
+</div>
 
 <!-- Profile Modal -->
 <div class="modal-overlay" id="modalOverlay">
